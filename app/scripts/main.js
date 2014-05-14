@@ -1,60 +1,80 @@
-console.log('working...');
-var itemsArray = [];
-var myUrl = "http://tiy-fee-rest.herokuapp.com/collections/andrewL"
+/*creating the global url*/
+var waitingList = "http://tiy-fee-rest.herokuapp.com/collections/thinktank";
 
-$(document).ready(function() {
-    
-
-        
-
-$('#todoForm').on("submit",function (event) {
-	event.preventDefault();
-     if($('input').val() !== '') {
-        var inputValue = $('input').val();
-
-        var myHelpTicket = {
-                content: inputValue
-        };
-
-        
-		
-		itemsArray.push(inputValue); 
-        $('.todoItems').append('<li>' + inputValue 
-        	+ '<a href=""><span class="glyphicon glyphicon-eject"></span></a></li>');
-        $.ajax({
-          url: "http://tiy-fee-rest.herokuapp.com/collections/andrewL",
-          type: "POST",
-          data: myHelpTicket,
-          error: function(data){
-            alert("not so good")
-          },
-          success: function(data){
-            alert("successful")
-          }
-
-});;
-     };
-        
+$(document).ready(function(){
+    ourWaitingList.init();
 });
 
-$(document).on('click', 'a', function (e) {
-    e.preventDefault();
-    $(this).parent().remove();
+var ourWaitingList = {
+    init: function() {
+        ourWaitingList.initStyling();
+        ourWaitingList.initEvents();
+    },
 
-    $.ajax({
-        url:"http://tyi-fee-rest.herokuapp.com/collections/andrewL",
-        type: "DELETE",
+    initStyling: function() {
+        ourWaitingList.render();
+    },
+
+    initEvents: function() {
+
+    },
+
+    render: function($el, template, data) {
+        var tmpl = _.template(template, data);
+        $el.html(tmpl);
+    },
+
+    renderWaitingList: function() {
+      $.ajax({
+        url: waitingList,
+        type: "GET",
         dataType: "json",
-        data:data,
-        error: function(data){
-            alert("it didn\'t go anywhere!")
+        error: function(jqXHR, status, error) {
+          alert("Failed");
         },
-        success: function(data){
-                alert("It\'s gone!")
-            }
+        success: function(data) { 
+          var posts = window.posts = data;  //allows the use of underscore
+          ourWaitingList.render($(""), Templates., posts);      
         }
-    )
-});
+      });
+    },
 
+   addStudent: function() {
+    var studentItem = $("input:text").val();
+    var studentObj = {
+        title: studentItem
+      };
 
-});
+      $.ajax({
+        url: waitingList,
+        type: "POST",
+        data: studentObj,
+        dataType: "json",
+        error: function(jqXHR, status, error) {
+            alert("Failed");
+          },
+          success: function(data) {  
+            $("input:text").val("");     
+            ourWaitingList.renderWaitingList();
+          }
+      });
+    },
+
+    removeToDo: function(e) {
+      var toRemove = $().data("postid"); //grabs the id of a specific post, to be used in an ajax delete
+
+        $.ajax({
+          url: "http://tiy-fee-rest.herokuapp.com/collections/thinktank/" + toRemove,
+          type: "DELETE",
+          error: function(jqXHR, status, error) {
+              alert("Failed");
+            },
+            success: function(data) {      
+                
+            }
+        });
+      
+    }
+
+};
+
