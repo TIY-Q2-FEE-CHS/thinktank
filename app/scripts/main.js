@@ -33,19 +33,19 @@ var ourWaitingList = {
           alert("Failed");
         },
         success: function(data) { 
-          var posts = window.posts = data;  //allows the use of underscore
+          var posts = window.posts = data.reverse();  //allows the use of underscore, reverses the data so newest addition is posted last
           ourWaitingList.render($(""), Templates., posts);      
         }
       });
     },
 
    addStudent: function() {
-    var studentItem = $("input:text").val();
+    var studentItem = $("input:text").val(); //adds the text from an input to an object, which is then posted in the array through ajax
     var studentObj = {
         title: studentItem
-      };
+    };
 
-      $.ajax({
+    $.ajax({
         url: waitingList,
         type: "POST",
         data: studentObj,
@@ -63,7 +63,7 @@ var ourWaitingList = {
     removeToDo: function(e) {
       var toRemove = $().data("postid"); //grabs the id of a specific post, to be used in an ajax delete
 
-        $.ajax({
+      $.ajax({
           url: "http://tiy-fee-rest.herokuapp.com/collections/thinktank/" + toRemove,
           type: "DELETE",
           error: function(jqXHR, status, error) {
