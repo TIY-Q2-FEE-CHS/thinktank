@@ -16,7 +16,7 @@ var ourWaitingList = {
     },
 
     initEvents: function() {
-      $("#studentForm").on("submit", "button", function(){
+      $("#studentForm").on("click", "button", function(){
           event.preventDefault();
           ourWaitingList.addStudent();
 
