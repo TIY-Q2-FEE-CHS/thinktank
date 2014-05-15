@@ -9,87 +9,65 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
-
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/style.css">
         <script src="../bower_components/underscore/underscore.js"></script>
         <!-- endbuild -->
         
     </head>
-    <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<body>
 
-
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="http://theironyard.com/locations/charleston/">the iron yard</a></li>
-                    <li class="active"><a href="http://jquery.com/">jQuery</a></li>
-                    <li class="active"><a href="http://underscorejs.org/">_</a></li>
-                    
-                </ul>
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li class="active"><a href="http://theironyard.com/locations/charleston/">the iron yard</a></li>
+                <li class="active"><a href="http://jquery.com/">jQuery</a></li>
+                <li class="active"><a href="http://underscorejs.org/">_</a></li>
+            </ul>
                 <h1 class="text-muted">Calvin's TIY Help Desk</h1>
-            </div>
+        </div>
 
-            
+        <div class="col-md-4">
             <form action="" id="studentForm">
             <label><h3>Add your name to the "Requesting Enlightenment" board</h3></label>
-                <input type="text" id="submit"> 
-                <textarea class="form-control summary" rows="3" placeholder="Problem Summary"></textarea>
-                <button type="submit">Add to List</button>
-            </form>
-
-
             <ol class="studentList">
             </ol>
-
-
-            <div class="footer">
-                <p><span class="glyphicon glyphicon-pushpin"></span> </p>
-
-            </div>
-
+                <input type="text" id="submit"> 
+                <textarea class="form-control summary" rows="3" placeholder="Problem Summary">
+                </textarea>
+                <button type="submit">
+                    Add to List
+                </button>
+            </form>
         </div>
-        <div class="gcs">
-            <script>
-  (function() {
-    var cx = '017112177921689516006:3batbf4z49q';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-    </div>
 
+        <div class="col-md-4">
+            <h3>In the meantime, google that shit here:</h3>
+            <div class="gcs">
+                <!-- google search bar- - - - -  -->
+                <script>
+                    (function() {
+                    var cx = '017112177921689516006:3batbf4z49q';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//www.google.com/cse/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                    })();
+                </script>
+                <gcse:search></gcse:search>
+            </div>
+        </div>
 
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
+    </div><!--  end container -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
-        
-        
-        <!-- endbower -->
-        <!-- endbuild -->
+        <script src="../bower_components/underscore/underscore.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-
-        <!-- build:js scripts/plugins.js -->
         <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
         <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
         <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
