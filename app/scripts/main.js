@@ -12,10 +12,22 @@ var ourWaitingList = {
     },
 
     initStyling: function() {
-        ourWaitingList.render();
+        ourWaitingList.renderWaitingList();
     },
 
     initEvents: function() {
+      $("#studentForm").on("click", "button", function(){
+          event.preventDefault();
+          ourWaitingList.addStudent();
+
+      });
+
+      $(".studentList").on("click", ".glyphicon", function() {
+          event.preventDefault();
+          //removes the data through ajax and simultaneously from the html
+          ourWaitingList.removeStudent();
+          $(this).closest("div").remove();
+      });
 
     },
 
@@ -34,15 +46,17 @@ var ourWaitingList = {
         },
         success: function(data) { 
           var posts = window.posts = data.reverse();  //allows the use of underscore, reverses the data so newest addition is posted last
-          ourWaitingList.render($(""), Templates., posts);      
+          ourWaitingList.render($(".studentList"), Templates.addPerson, posts);      
         }
       });
     },
 
    addStudent: function() {
     var studentItem = $("input:text").val(); //adds the text from an input to an object, which is then posted in the array through ajax
+    var studentQuestion = $(".summary").val();  //takes a student's problem description
     var studentObj = {
-        title: studentItem
+        title: studentItem,
+        question: studentQuestion
     };
 
     $.ajax({
@@ -54,14 +68,15 @@ var ourWaitingList = {
             alert("Failed");
           },
           success: function(data) {  
-            $("input:text").val("");     
+            $("input:text").val("");
+            $(".summary").val("");     
             ourWaitingList.renderWaitingList();
           }
       });
     },
 
-    removeToDo: function(e) {
-      var toRemove = $().data("postid"); //grabs the id of a specific post, to be used in an ajax delete
+    removeStudent: function(e) {
+      var toRemove = $(".aStudent").data("postid"); //grabs the id of a specific post, to be used in an ajax delete
 
       $.ajax({
           url: "http://tiy-fee-rest.herokuapp.com/collections/thinktank/" + toRemove,
