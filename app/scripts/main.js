@@ -25,8 +25,7 @@ var ourWaitingList = {
       $(".studentList").on("click", ".glyphicon", function() {
           event.preventDefault();
           //removes the data through ajax and simultaneously from the html
-          ourWaitingList.removeStudent();
-          $(this).closest("div").remove();
+          $(this).closest("div").remove() && ourWaitingList.removeStudent();
       });
 
     },
