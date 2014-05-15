@@ -14,21 +14,9 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <script src="../bower_components/underscore/underscore.js"></script>
         <!-- endbuild -->
         
-         
-          <script type="template/html" id="template">
-
-        <% _.each(itemsArray, function(itemsArray, index, list){ %>
-
-            "<li><%= itemsArray %><span></span></li>"
-
-        <% }); %>
-        </script>
-            
-            
-          </script>
-
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -48,13 +36,15 @@
             </div>
 
             
-            <form action="" id="todoForm">
-            <label><h3>Add your name to the "Requesting Enightenment" board</h3></label>
-                <input type="text" id="submit" /> <button type="submit">Add to List</button>
+            <form action="" id="studentForm">
+            <label><h3>Add your name to the "Requesting Enlightenment" board</h3></label>
+                <input type="text" id="submit"> 
+                <textarea class="form-control summary" rows="3" placeholder="Problem Summary"></textarea>
+                <button type="submit">Add to List</button>
             </form>
 
 
-            <ol class="todoItems">
+            <ol class="studentList">
             </ol>
 
 
@@ -69,7 +59,7 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
-        <script src="../bower_components/underscore/underscore.js"></script>
+        
         
         <!-- endbower -->
         <!-- endbuild -->
@@ -100,6 +90,7 @@
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/Templates.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/itemsArray.js"></script>
         <!-- endbuild -->
