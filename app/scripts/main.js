@@ -24,9 +24,16 @@ var ourWaitingList = {
 
       $(".studentList").on("click", ".glyphicon", function() {
           event.preventDefault();
-          //removes the data through ajax and simultaneously from the html
-          ourWaitingList.removeStudent();
-          $(this).closest("div").remove();
+          //removes the data through ajax and simultaneously from the html(in a super janky process)
+          if ($(this).closest("div").hasClass("completed")) {
+              $(this).closest("div").removeClass("completed");
+              return;
+          } else {
+              $(this).closest("div").addClass("completed");
+              ourWaitingList.removeStudent();
+              $(this).closest("div").remove();
+
+          };
       });
 
     },
@@ -76,8 +83,8 @@ var ourWaitingList = {
     },
 
     removeStudent: function(e) {
-      var toRemove = $(".aStudent").data("postid"); //grabs the id of a specific post, to be used in an ajax delete
-
+      var toRemove = $(".completed").data("postid"); //grabs the id of a specific post, to be used in an ajax delete
+          console.log(toRemove);
       $.ajax({
           url: "http://tiy-fee-rest.herokuapp.com/collections/thinktank/" + toRemove,
           type: "DELETE",
