@@ -9,6 +9,7 @@ var ourWaitingList = {
     init: function() {
         ourWaitingList.initStyling();
         ourWaitingList.initEvents();
+        $(".google").hide();
     },
 
     initStyling: function() {
@@ -16,9 +17,10 @@ var ourWaitingList = {
     },
 
     initEvents: function() {
-      $("#studentForm").on("submit", "button", function(){
+      $("#studentForm").on("submit", function(){
           event.preventDefault();
           ourWaitingList.addStudent();
+          $(".google").show();
 
       });
 
