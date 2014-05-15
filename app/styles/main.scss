@@ -1,10 +1,14 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
 // bower:scss
-@import '../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
 // endbower
 
 a {
+
+  
+
+    display: inline-block;
     margin-left: 20px;
     color: red;
     text-decoration: none;
@@ -18,27 +22,29 @@ a {
 
 /* Space out content a bit */
 body {
-
-    -webkit-border-radius: 20px;
-    border: solid silver 25px;
+    
+    -webkit-border-radius: 30px;
+    border: solid blue 20px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
 
-    border-bottom: 2px solid blue;
+    border-bottom: 1px solid blue;
     padding-left: 15px;
     padding-right: 15px;
 }
 
 /* Custom page header */
 .header {
-    border-bottom: 2px solid blue;
+    border-bottom: 1px solid blue;
     text-align: center;
+
 
     
 
@@ -73,6 +79,9 @@ body {
         padding: 14px 24px;
     }
 }
+#todoForm{
+    text-align: center;
+}
 
 /* Supporting marketing content */
 .marketing {
@@ -103,6 +112,7 @@ body {
 
     /* Remove the bottom border on the jumbotron for visual effect */
     .jumbotron {
+
         border-bottom: 0;
     }
 }
