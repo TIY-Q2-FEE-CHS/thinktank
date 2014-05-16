@@ -6,12 +6,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/style.css">
         <script src="../bower_components/underscore/underscore.js"></script>
@@ -30,22 +24,31 @@
                 <h1 class="text-muted">Calvin's TIY Help Desk</h1>
         </div>
 
-        <div class="col-md-4">
-            <form action="" id="studentForm">
-            <label><h3>Add your name to the "Requesting Enlightenment" board</h3></label>
-            <ol class="studentList">
-            </ol>
-                <input type="text" id="submit"> 
-                <textarea class="form-control summary" rows="3" placeholder="Problem Summary">
-                </textarea>
-                <button type="submit">
-                    Add to List
-                </button>
-            </form>
+        <div class="col-md-4 red">
+            <div class="speechbubble">
+                <label><h3>Add your name to the "Requesting Enlightenment" board</h3></label>
+                <form action="" id="studentForm">
+                name:
+                    <input type="text" id="submit">
+                    <br>request: 
+                    <textarea class="form-control summary" rows="3" placeholder="Problem Summary">
+                    </textarea>
+                    <button type="submit">
+                        Add to List
+                    </button>
+                </form>
+            </div>
+            <img src="images/calvin.jpeg" class="calvin" alt="">
         </div>
 
-        <div class="google col-md-4">
+        <div class="google col-md-4 blue">
+            <div class="notePad">
+                <h5>You are currently <a></a> in line to see Calvin. Approximate wait time is <a></a></h5>
+                <ol class="studentList">
+                </ol>
+            </div>
             <h3>In the meantime, google that shit here:</h3>
+
             <div class="gcs">
                 <!-- google search bar- - - - -  -->
                 <script>
@@ -64,7 +67,7 @@
 
             </div>
         </div>
-        <div class="col-md-4"><gcse:searchresults></gcse:searchresults></div>
+        <div class="col-md-4 green"><gcse:searchresults></gcse:searchresults></div>
 
     </div><!--  end container -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>

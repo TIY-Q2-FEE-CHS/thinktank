@@ -1,0 +1,49 @@
+.red {
+	background-color: darkred;
+}
+.blue{
+	background-color: skyblue;
+}
+.green{
+	background-color: darkgreen;
+}
+
+.col-md-4{
+	border: 0px solid black 2px solid #eee;
+	padding: 2.5%;
+}
+.container{
+	width: 100%;
+	margin: 0%;
+}
+.speechbubble{
+	position: relative;
+	padding: 15px;
+	margin: 1em 0 3em;
+	border: 2px solid black;
+	color: #333;
+	background: #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.speechbubble:after {
+	content:"";
+	position:absolute;
+	bottom:-15px; /* value = - border-top-width - border-bottom-width */
+	left:72%; /* controls horizontal position */
+	border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#eee transparent;
+	/* reduce the damage in FF3.0 */
+	display:block;
+	width:0;
+}
+.calvin{
+	-webkit-border-radius: 100%;
+	width: 70px;
+	margin-left: 65%;
+}
+.notePad{
+	background-color: 
+}
