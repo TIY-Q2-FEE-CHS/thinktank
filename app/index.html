@@ -15,14 +15,14 @@
 <body>
 
     <div class="container">
-        <div class="header">
+        <!-- <div class="header">
             <ul class="nav nav-pills pull-right">
                 <li class="active"><a href="http://theironyard.com/locations/charleston/">the iron yard</a></li>
                 <li class="active"><a href="http://jquery.com/">jQuery</a></li>
                 <li class="active"><a href="http://underscorejs.org/">_</a></li>
             </ul>
                 <h1 class="text-muted">Calvin's TIY Help Desk</h1>
-        </div>
+        </div> -->
 
         <div class="col-md-4 red">
             <div class="speechbubble">
@@ -43,31 +43,35 @@
 
         <div class="google col-md-4 blue">
             <div class="notePad">
-                <h5>You are currently <a></a> in line to see Calvin. Approximate wait time is <a></a></h5>
+                <h3>Students seeking enlightenment:</h3>
                 <ol class="studentList">
                 </ol>
             </div>
-            <h3>In the meantime, google that shit here:</h3>
+            <div class="speechbubble">
+                    <h5>You are currently <a id="inLine"></a> in line to see Calvin. Approximate wait time is <a id="waitTime"></a></h5>
+                <h3>In the meantime, google your question here:</h3>
 
-            <div class="gcs">
-                <!-- google search bar- - - - -  -->
-                <script>
-                      (function() {
-                        var cx = '009111147535668371825:4cmtfm__vci';
-                        var gcse = document.createElement('script');
-                        gcse.type = 'text/javascript';
-                        gcse.async = true;
-                        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                            '//www.google.com/cse/cse.js?cx=' + cx;
-                        var s = document.getElementsByTagName('script')[0];
-                        s.parentNode.insertBefore(gcse, s);
-                      })();
-                    </script>
-                    <gcse:searchbox></gcse:searchbox>
+                <div class="gcs">
+                    <!-- google search bar- - - - -  -->
+                    <script>
+                          (function() {
+                            var cx = '009111147535668371825:4cmtfm__vci';
+                            var gcse = document.createElement('script');
+                            gcse.type = 'text/javascript';
+                            gcse.async = true;
+                            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                                '//www.google.com/cse/cse.js?cx=' + cx;
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(gcse, s);
+                          })();
+                        </script>
+                        <gcse:searchbox></gcse:searchbox>
 
+                </div>
             </div>
+            <img class = "calvin" src="images/calvin.jpeg" alt="">
         </div>
-        <div class="col-md-4 green"><gcse:searchresults></gcse:searchresults></div>
+        <div class="col-md-4 green" id= "searchResults"><gcse:searchresults></gcse:searchresults></div>
 
     </div><!--  end container -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>

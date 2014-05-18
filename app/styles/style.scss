@@ -1,16 +1,17 @@
-.red {
-	background-color: darkred;
-}
-.blue{
-	background-color: skyblue;
-}
-.green{
-	background-color: darkgreen;
+
+body{
+	display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -webkit-transition: .5s all ease; 
 }
 
 .col-md-4{
-	border: 0px solid black 2px solid #eee;
 	padding: 2.5%;
+	height: 700px;
+	margin: 0px;
+	overflow: scroll;
 }
 .container{
 	width: 100%;
@@ -41,9 +42,34 @@
 }
 .calvin{
 	-webkit-border-radius: 100%;
-	width: 70px;
+	width: 90px;
 	margin-left: 65%;
 }
 .notePad{
-	background-color: 
+	background-color: #ddd;
 }
+.studentlist{
+	li{
+		border-bottom: 1px solid blue;
+	}
+}
+.header{
+	
+}
+.hidden {
+	display: none;
+}
+.container{
+	border: 1px solid red;
+}
+.notePad{
+	border: 4px solid rgba(100,75,0,1);
+	height: 250px;
+	overflow: scroll;
+	color: #fff;
+	background-image: url('../images/chalk.jpg');
+}
+
+
+
+

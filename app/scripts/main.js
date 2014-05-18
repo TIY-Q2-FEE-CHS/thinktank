@@ -39,6 +39,10 @@ var ourWaitingList = {
       });
 
     },
+    toggleWaitTime : function(){
+      var inline=studentObj.length;
+      $("#inLine").html(inline);
+    },
 
     render: function($el, template, data) {
         var tmpl = _.template(template, data);
