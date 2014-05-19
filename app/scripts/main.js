@@ -59,7 +59,12 @@ var ourWaitingList = {
         },
         success: function(data) { 
           var posts = window.posts = data.reverse();  //allows the use of underscore, reverses the data so newest addition is posted last
-          ourWaitingList.render($(".studentList"), Templates.addPerson, posts);      
+          ourWaitingList.render($(".studentList"), Templates.addPerson, posts);
+
+          $.getJSON(waitingList, function(json) {  //counts up and down
+                    $("#inLine").html("(" + json.length + ")");
+                    $("#waitTime").html("(" + json.length * 10 + ")");
+                });      
         }
       });
     },
@@ -67,9 +72,7 @@ var ourWaitingList = {
    addStudent: function() {
     var studentItem = $("input:text").val(); //adds the text from an input to an object, which is then posted in the array through ajax
     var studentQuestion = $(".summary").val();  //takes a student's problem description
-        itemsArray.unshift(studentItem);
-        $("#inLine").html("(" + itemsArray.length + ")");
-        $("#waitTime").html("(" + itemsArray.length * 10 + ")");
+        
     var studentObj = {
         title: studentItem,
         question: studentQuestion
@@ -98,9 +101,13 @@ var ourWaitingList = {
           url: "http://tiy-fee-rest.herokuapp.com/collections/thinktank/" + toRemove,
           type: "DELETE",
           error: function(jqXHR, status, error) {
-              alert("Failed");
+                alert("Failed");
             },
-            success: function(data) {       
+            success: function(data) { 
+                $.getJSON(waitingList, function(json) {
+                    $("#inLine").html("(" + json.length + ")");
+                    $("#waitTime").html("(" + json.length * 10 + ")");
+                });
             }
         });
       
