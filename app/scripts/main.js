@@ -67,6 +67,9 @@ var ourWaitingList = {
    addStudent: function() {
     var studentItem = $("input:text").val(); //adds the text from an input to an object, which is then posted in the array through ajax
     var studentQuestion = $(".summary").val();  //takes a student's problem description
+        itemsArray.unshift(studentItem);
+        $("#inLine").html("(" + itemsArray.length + ")");
+        $("#waitTime").html("(" + itemsArray.length * 10 + ")");
     var studentObj = {
         title: studentItem,
         question: studentQuestion
@@ -97,8 +100,7 @@ var ourWaitingList = {
           error: function(jqXHR, status, error) {
               alert("Failed");
             },
-            success: function(data) {      
-                
+            success: function(data) {       
             }
         });
       
