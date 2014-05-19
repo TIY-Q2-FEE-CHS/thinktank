@@ -2,11 +2,10 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Calvin's Help Desk 1.0</title>
+        <title>Calvin's Help Dessk 1.0</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
-
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/style.css">
         <script src="../bower_components/underscore/underscore.js"></script>
@@ -25,45 +24,50 @@
                 <h1 class="text-muted">Calvin's TIY Help Desk</h1>
         </div>
 
-        <div class="col-md-4">
-            <ol class="studentList">
-            </ol>
-            <form action="" id="studentForm">
-            <label><h3>Add your name to the "Requesting Enlightenment" board</h3></label>
-                <input type="text" id="submit"> 
-                <textarea class="form-control summary" rows="3" placeholder="Problem Summary">
-                </textarea>
-                <button type="submit">
-                    Add to List
-                </button>
-            </form>
+        <div class="col-md-4 red">
+            <div class="speechbubble">
+                <label><h3>Add your name to the "Requesting Enlightenment" board</h3></label>
+                <form action="" id="studentForm">
+                name:
+                    <input type="text" id="submit">
+                    <br>request: 
+                    <textarea class="form-control summary" rows="3" placeholder="Problem Summary">
+                    </textarea>
+                    <button type="submit">
+                        Add to List
+                    </button>
+                </form>
+            </div>
+            <img src="images/calvin.jpeg" class="calvin" alt="">
         </div>
 
-        <div class="col-md-4">
+        <div class="google col-md-4 blue">
+            <div class="notePad">
+                <h5>You are currently <a></a> in line to see Calvin. Approximate wait time is <a></a></h5>
+                <ol class="studentList">
+                </ol>
+            </div>
             <h3>In the meantime, google that shit here:</h3>
+
             <div class="gcs">
                 <!-- google search bar- - - - -  -->
                 <script>
-                    (function() {
-                    var cx = '017112177921689516006:3batbf4z49q';
-                    var gcse = document.createElement('script');
-                    gcse.type = 'text/javascript';
-                    gcse.async = true;
-                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                        '//www.google.com/cse/cse.js?cx=' + cx;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(gcse, s);
-                    })();
-                </script>
-                <gcse:search></gcse:search>
+                      (function() {
+                        var cx = '009111147535668371825:4cmtfm__vci';
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//www.google.com/cse/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:searchbox></gcse:searchbox>
+
             </div>
         </div>
-
-
-
-
-        
-    
+        <div class="col-md-4 green"><gcse:searchresults></gcse:searchresults></div>
 
     </div><!--  end container -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
